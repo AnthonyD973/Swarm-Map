@@ -1,0 +1,39 @@
+#ifndef SMCONFIG_H
+#define SMCONFIG_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
+
+/**
+ * The number of loop() calls between the emission of chunks.
+ */
+#define CHUNK_DELAY @CHUNK_DELAY@
+
+/**
+ * The maximum number of messages to send per chunk.
+ * We send less messages if we don't have enough data to send.
+ */
+#define CHUNK_AMOUNT @CHUNK_AMOUNT@
+
+/**
+ * The number of swarmmap_tick() calls before a entry is considered inactive.
+ */
+#define TICKS_TO_INACTIVE @TICKS_TO_INACTIVE@
+
+/**
+ * Size (in bytes) of the Lamport clock.
+ */
+#define LAMPORT_SIZE @LAMPORT_SIZE@
+
+/**
+ * The maximum number of ticks a Lamport clock sould be above an old
+ * Lamport clock so that the new Lamport clock is considered as 'new'.
+ */
+#define LAMPORT_THRESHOLD @LAMPORT_THRESHOLD@
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
+
+#endif // SMCONFIG_H
